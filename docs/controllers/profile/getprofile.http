@@ -1,4 +1,4 @@
-# docs/controllers/getprofile.http
+# docs/controllers//profile/getprofile.http
 @env = dev
 
 GET http://localhost:3001/api/users/profile

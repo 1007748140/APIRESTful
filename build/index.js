@@ -19,6 +19,10 @@ const userModel_1 = __importDefault(require("./models/userModel"));
 const roleModel_1 = __importDefault(require("./models/roleModel"));
 const userRoleModel_1 = __importDefault(require("./models/userRoleModel"));
 const peopleModel_1 = __importDefault(require("./models/peopleModel"));
+const invoiceModel_1 = __importDefault(require("./models/invoiceModel"));
+const paymentModel_1 = __importDefault(require("./models/paymentModel"));
+const invoiceDetailModel_1 = __importDefault(require("./models/invoiceDetailModel"));
+const productModel_1 = __importDefault(require("./models/productModel"));
 dotenv_1.default.config();
 const PORT = process.env.PORT || 3000;
 function initializeDatabase() {
@@ -30,10 +34,18 @@ function initializeDatabase() {
             yield database_1.default.query('DROP TABLE IF EXISTS people');
             yield database_1.default.query('DROP TABLE IF EXISTS roles');
             yield database_1.default.query('DROP TABLE IF EXISTS users');
+            yield database_1.default.query('DROP TABLE IF EXISTS invoiceDetails');
+            yield database_1.default.query('DROP TABLE IF EXISTS payments');
+            yield database_1.default.query('DROP TABLE IF EXISTS invoices');
+            yield database_1.default.query('DROP TABLE IF EXISTS products');
             yield userModel_1.default.sync();
             yield roleModel_1.default.sync();
             yield userRoleModel_1.default.sync();
             yield peopleModel_1.default.sync();
+            yield productModel_1.default.sync();
+            yield invoiceModel_1.default.sync();
+            yield paymentModel_1.default.sync();
+            yield invoiceDetailModel_1.default.sync();
             console.log('Modelos sincronizados correctamente.');
             app_1.default.listen(PORT, () => {
                 console.log(`Servidor corriendo en el puerto ${PORT}`);

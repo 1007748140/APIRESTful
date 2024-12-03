@@ -7,6 +7,11 @@ import Role from './models/roleModel';
 import UserRole from './models/userRoleModel';
 import People from './models/peopleModel';
 
+import Invoice from './models/invoiceModel';
+import Payment from './models/paymentModel';
+import InvoiceDetail from './models/invoiceDetailModel';
+import Product from './models/productModel';
+
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -22,11 +27,21 @@ async function initializeDatabase() {
     await sequelize.query('DROP TABLE IF EXISTS roles');
     await sequelize.query('DROP TABLE IF EXISTS users');
 
+    await sequelize.query('DROP TABLE IF EXISTS invoiceDetails');
+    await sequelize.query('DROP TABLE IF EXISTS payments');
+    await sequelize.query('DROP TABLE IF EXISTS invoices');
+    await sequelize.query('DROP TABLE IF EXISTS products');
+
     // Crear tablas en orden correcto
     await User.sync();
     await Role.sync();
     await UserRole.sync();
     await People.sync();
+
+    await Product.sync();
+    await Invoice.sync();
+    await Payment.sync();
+    await InvoiceDetail.sync();
 
     console.log('Modelos sincronizados correctamente.');
 

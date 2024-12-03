@@ -1,10 +1,10 @@
-// docs/controllers/roles.http
+// docs/controllers/roles/roles.http
 @baseUrl = http://localhost:3001
 
 ### Crear un nuevo rol
 POST {{baseUrl}}/api/roles
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzMzMTY1NTU4LCJleHAiOjE3MzMxNjkxNTh9.pqKLolZkMKh9kl_MjCgDT5hy5oMeYN10T84wakFmDk0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzMzMjQ0OTA0LCJleHAiOjE3MzMyNDg1MDR9.bmQAIrc8NLonltIKOoWtK-aIp8hwxx5H5v4HzO9UCvg
 
 {
     "roleName": "USUARIO"

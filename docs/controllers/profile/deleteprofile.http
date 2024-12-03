@@ -1,4 +1,4 @@
-# docs/controllers/deleteprofile.http
+# docs/controllers/profile/deleteprofile.http
 @env = dev
 
 DELETE http://localhost:3001/api/users/profile/1

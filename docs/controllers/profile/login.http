@@ -1,4 +1,4 @@
-# docs/controllers/login.http
+# docs/controllers//profile/login.http
 POST  http://localhost:3001/api/users/login
 Content-Type: application/json
 
